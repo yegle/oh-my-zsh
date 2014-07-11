@@ -1,0 +1,8 @@
+#compdef workon
+
+
+_branches() {
+    (cd $WORKDIR && hg log -r smart -T '{node}\n{GOOG_pendingcl}\n')
+}
+
+_alternative "1:branch name:($(_branches))"
